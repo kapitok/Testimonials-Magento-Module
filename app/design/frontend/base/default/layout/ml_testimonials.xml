@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <ml_testimonials_index_index>
+        <reference name="content">
+            <block type="ml_testimonials/list" name="ml.testimonials.list" template="ml_testimonials/list.phtml"/>
+        </reference>
+    </ml_testimonials_index_index>
+    <ml_testimonials_index_edit>
+        <reference name="content">
+            <block type="ml_testimonials/edit" name="ml.testimonials.edit" template="ml_testimonials/edit.phtml"/>
+        </reference>
+    </ml_testimonials_index_edit>
+    <default>
+        <reference name="top.links">
+            <action method="addLink" translate="label title">
+                <label>Testimonials</label>
+                <url>testimonials</url>
+                <title>Testimonials</title>
+                <prepare>true</prepare>
+            </action>
+        </reference>
+    </default>
+</layout>

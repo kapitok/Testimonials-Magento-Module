@@ -1,0 +1,26 @@
+<?php
+/** @var $this Ml_Testimonials_Block_List  */
+
+/** @var Mage_Page_Block_Html_Pager $pager  */
+$pager = $this->getChild('pager');
+?>
+<?php if(Mage::helper('ml_testimonials')->isCustomerLoggedIn()): ?>
+    <div>
+        <a href="<?php echo $this->getUrl('testimonials/index/edit') ?>">
+            <?php echo $this->__('Add testimonial') ?></a>
+    </div>
+<?php endif; ?>
+<div class="testimonials-list">
+    <?php foreach ($pager->getCollection() as $testimonial): ?>
+        <div class="testimonial-item">
+            <div class="testimonial-text">
+                <p><?php echo $testimonial->getDescription() ?></p>
+            </div>
+            <div class="testimonial-date">
+                <p><?php echo $testimonial->getCreatedAt() ?></p>
+            </div>
+        </div>
+        <hr/>
+    <?php endforeach; ?>
+</div>
+<?php echo $this->getChildHtml('pager'); ?>
